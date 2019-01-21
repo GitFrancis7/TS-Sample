@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getting started with TypeScript</title>
+    <script src="main.js"></script>
+</head>
+<body>
+
+<script>
+      function mefDate(laDate)
+      {
+        var mois = ((laDate.getMonth() + 1) < 10) ? '0' + (laDate.getMonth() + 1) : laDate.getMonth() + 1;
+        var jour = ((laDate.getDate()) < 10) ? '0' + laDate.getDate() : laDate.getDate();
+        //alert('Jour MEF  => ' + jour + '\n' + 'Mois MEF  => ' + mois);
+        return laDate.getFullYear() + '-' + mois + '-' + jour;
+      }
+ 
+      var date = '2008-02-29';
+      var tableau = date.split('-');
+      var year = tableau[0];
+      var month = parseInt(tableau[1], 10) - 1;
+      //alert ('Mois init = '+ month);
+      var day = parseInt(tableau[2], 10);
+ 
+      var laDate = new Date(year, month, day - 1);
+      yesterday = mefDate(laDate);
+ 
+      var laDate = new Date(year, month, day + 1);
+      tomorrow = mefDate(laDate);
+ 
+      alert('aujourdhui => ' + date + '\n' + 'hier => ' + yesterday + '\n' + 'demain => ' + tomorrow);
+  
+</script>
+
+    <div>
+        <label>Your firstname:</label>
+        <input type="text" id="myInput" onkeyup="onKeyUp()"/>
+    </div>
+    <p><span id="myOutput"></span></p>
+</body>
+</html>
